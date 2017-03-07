@@ -1,19 +1,51 @@
 window.onload = function () {
-    d3.select('body').style('background-color', 'black');
-    d3.select('body').append('div')
-        .attr('id', 'warpDiv')
-        .style({
+   // d3.select('body').style('background-color', 'black');
+    d3.select('#warpDiv').style({
+            'position':'absolute',
+            'left':'0px',
+            'right':'0px',
             'width': '1440px',
             'height': '960px',
             "opacity": 1.0,
             'z-index': '1'
 });
+    d3.select("#warpDiv").append("div").attr("id","selectDiv")
+    .style({
+    'position':'absolute',
+    "left" : "0px",
+    "top" : "100px",
+    "width" : "400px",
+    "height": "700px",
+    "border": "solid 1px black"
+    });
     d3.select("#warpDiv").append("div").attr("id","textDiv")
     .style({
-    "left" : "300px",
-    "top" : "200px",
+    'position':'absolute',
+    "left" : "500px",
+    "top" : "100px",
+    "width" : "800px",
+    "height": "700px",
+    "border": "solid 1px black"
+    });
+    //语音转文字
+    d3.select("#selectDiv").append("div").attr("id","funcDiv1")
+    .style({
+    'position':'absolute',
+    "left" : "50px",
+    "top" : "50px",
     "width" : "200px",
-    "height": "400px",
-    "background-color": "white"
-    })
+    "height": "50px",
+    "border": "solid 1px black"
+    });
+    //文字查询
+    d3.select("#selectDiv").append("div").attr("id","funcDiv2")
+    .style({
+    'position':'absolute',
+    "left" : "50px",
+    "top" : "150px",
+    "width" : "200px",
+    "height": "50px",
+    "border": "solid 1px black"
+    });
+
 }
