@@ -1,5 +1,6 @@
 window.onload = function () {
    // d3.select('body').style('background-color', 'black');
+   //主div
     d3.select('#warpDiv').style({
             'position':'absolute',
             'left':'0px',
@@ -9,6 +10,7 @@ window.onload = function () {
             "opacity": 1.0,
             'z-index': '1'
 });
+    //选择栏
     d3.select("#warpDiv").append("div").attr("id","selectDiv")
     .style({
     'position':'absolute',
@@ -18,6 +20,7 @@ window.onload = function () {
     "height": "700px",
     "border": "solid 1px black"
     });
+    //展示栏
     d3.select("#warpDiv").append("div").attr("id","textDiv")
     .style({
     'position':'absolute',
@@ -27,6 +30,14 @@ window.onload = function () {
     "height": "700px",
     "border": "solid 1px black"
     });
+    d3.select("#textDiv").append("div").attr("id","audioSelect").style({
+    'position':'absolute',
+    "left" : "50px",
+    "top" : "50px",
+    "width" : "700px",
+    "height": "200px",
+    "border": "solid 1px black"
+    })
     //语音转文字
     d3.select("#selectDiv").append("div").attr("id","funcDiv1")
     .style({
@@ -35,7 +46,8 @@ window.onload = function () {
     "top" : "50px",
     "width" : "200px",
     "height": "50px",
-    "border": "solid 1px black"
+    "border": "solid 1px black",
+    'cursor': 'pointer'
     });
     //文字查询
     d3.select("#selectDiv").append("div").attr("id","funcDiv2")
@@ -45,7 +57,13 @@ window.onload = function () {
     "top" : "150px",
     "width" : "200px",
     "height": "50px",
-    "border": "solid 1px black"
+    "border": "solid 1px black",
+    'cursor': 'pointer'
     });
+
+
+    audioRec();
+    audioToText();
+    findText();
 
 }
