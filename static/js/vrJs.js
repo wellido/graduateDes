@@ -42,23 +42,33 @@ window.onload = function () {
     d3.select("#selectDiv").append("div").attr("id","funcDiv1")
     .style({
     'position':'absolute',
-    "left" : "50px",
+    "left" : "100px",
     "top" : "50px",
     "width" : "200px",
     "height": "50px",
     "border": "solid 1px black",
     'cursor': 'pointer'
+    }).html("语音转文字").style({
+     'vertical-align': 'middle',
+      'line-height': '50px',
+     'font-size': '20px',
+     'text-align': 'center'
     });
     //文字查询
     d3.select("#selectDiv").append("div").attr("id","funcDiv2")
     .style({
     'position':'absolute',
-    "left" : "50px",
+    "left" : "100px",
     "top" : "150px",
     "width" : "200px",
     "height": "50px",
     "border": "solid 1px black",
     'cursor': 'pointer'
+    }).html("文字定位").style({
+     'vertical-align': 'middle',
+     'font-size': '20px',
+     'line-height': '50px',
+     'text-align': 'center'
     });
 
 
