@@ -28,6 +28,7 @@ d3.select("#start-recording").style({
      "left":"120px"
 }).on("click",function(){
     this.disabled = true;
+    record();
     d3.select("#recordingStatus").html("录音中");
 }).html("开始").style({
      'color': 'white',
@@ -48,7 +49,7 @@ d3.select("#stop-recording").style({
     "background-color":"#3469a4",
     "left":"480px"
 }).on("click",function(){
-
+    stop();
 }).html("上传").style({
     'color': 'white',
     'vertical-align': 'middle',
@@ -90,17 +91,18 @@ d3.select("#resume-recording").style({
      "left":"360px"
 }).on("click",function(){
      this.disabled = true;
+     upload();
      d3.select("pause-recording").disabled=false;
      d3.select("#recordingStatus").html("录音中");
-}).html("继续").style({
+}).html("上传").style({
      'color': 'white',
      'vertical-align': 'middle',
      'font-size': '20px',
      'text-align': 'center'
 });
-
+var adressStr="{% static "+ "\"js/recorder.swf\""+" %}"
 Recorder.initialize({
-   swfSrc: "{% static "js/recorder.swf" %}"
+   swfSrc: adressStr
   });
 function record(){
         Recorder.record({
@@ -119,7 +121,7 @@ function stop(){
       }
 function upload(){
             Recorder.upload({
-              url:        "127.0.0.1:8000/vrData"
+              url:        "127.0.0.1:8000/vrData",
               audioParam: "audioFileRes",
               params: {
                 "audioFile": new Date().getTime(),
@@ -130,8 +132,5 @@ function upload(){
                 window.location = track.permalink_url;
               }
             });
-          error: function(err){
-            alert(err)
-          }
       }
 }
