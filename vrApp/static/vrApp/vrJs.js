@@ -1,5 +1,5 @@
 window.onload = function () {
-   // d3.select('body').style('background-color', 'black');
+
    //主div
     d3.select('#warpDiv').style({
             'position':'absolute',
