@@ -1,4 +1,4 @@
-window.onload = function () {
+function mainDiv() {
 
    //主div
     d3.select('#warpDiv').style({
@@ -70,10 +70,5 @@ window.onload = function () {
      'line-height': '50px',
      'text-align': 'center'
     });
-
-
-    audioRec();
-    audioToText();
-    findText();
 
 }

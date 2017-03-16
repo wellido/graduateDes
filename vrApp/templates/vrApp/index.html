@@ -17,53 +17,19 @@
 <script src="{% static 'vrApp/audioToText.js' %}" type="text/javascript"></script>
 <script src="{% static 'vrApp/findText.js' %}" type="text/javascript"></script>
 <script>
+window.onload = function () {
+
+    mainDiv()
+    audioRec();
+    audioToText();
+    findText();
+console.log(Recorder._initialized);
 document.getElementById("warpDiv").style.backgroundImage="url(/static/vrApp/img/11.jpeg)";
 Recorder.initialize({
    swfSrc: "/static/vrApp/swf/recorder.swf"
   });
-    function record(){
-        Recorder.record({
-          start: function(){
-            console.log("recording starts now. press stop when youre done. and then play or upload if you want.");
-          }
-        });
-      }
-
-function play(){
-        Recorder.stop();
-        Recorder.play();
-      }
-function stop(){
-        Recorder.stop();
-      }
-function upload(){
-            Recorder.upload({
-              url:        "127.0.0.1:8000/vrData",
-              audioParam: "audioFileRes",
-              params: {
-                "audioFile": new Date().getTime(),
-                "textFile": ""
-              },
-              success: function(responseText){
-                var track = $.parseJSON(responseText)
-                window.location = track.permalink_url;
-              }
-            });
-      }
-d3.select("#start-recording").on("click",function(){
-    this.disabled = true;
-    record();
-    d3.select("#recordingStatus").html("录音中");
-});
-d3.select("#stop-recording").on("click",function(){
-    stop();
-});
-d3.select("#resume-recording").on("click",function(){
-     this.disabled = true;
-     upload();
-     d3.select("pause-recording").disabled=false;
-     d3.select("#recordingStatus").html("录音中");
-});
+console.log(swfObject());
+}
 </script>
 </body>
 </html>
