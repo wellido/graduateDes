@@ -6,14 +6,12 @@ d3.select("#recordingStatus")
     "left":"300px",
     "width":"100px",
     "height":"70px"
-});
-d3.select("#time")
-.style({
-    "position":"absolute",
-    "top":"20px",
-    "left":"30px",
-    "font-size":"20px",
-    "color":"white"
+}).html("停止").style({
+     'vertical-align': 'middle',
+     'line-height': '70px',
+     'font-size': '20px',
+     'text-align': 'center',
+     "color":"white"
 });
 d3.select("#start-recording").style({
     'position':'absolute',
@@ -25,6 +23,9 @@ d3.select("#start-recording").style({
     'border-radius': '5px',
     "background-color":"#3469a4",
      "left":"200px"
+}).on("click",function(){
+    navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+    d3.select("#recordingStatus").html("录音中");
 }).html("开始").style({
      'color': 'white',
      'vertical-align': 'middle',
@@ -41,6 +42,9 @@ d3.select("#stop-recording").style({
     'border-radius': '5px',
     "background-color":"#3469a4",
     "left":"320px"
+}).on("click",function(){
+    mediaRecorder.stop();
+    d3.select("#recordingStatus").html("停止");
 }).html("停止").style({
     'color': 'white',
     'vertical-align': 'middle',
@@ -57,6 +61,9 @@ d3.select("#upload-recording").style({
     'border-radius': '5px',
     "background-color":"#3469a4",
      "left":"440px"
+}).on("click",function(){
+    mediaRecorder.save();
+    d3.select("#recordingStatus").html("已上传");
 }).html("上传").style({
      'color': 'white',
      'vertical-align': 'middle',
