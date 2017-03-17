@@ -1,5 +1,4 @@
 function mainDiv() {
-
    //主div
     d3.select('#warpDiv').style({
             'position':'absolute',
@@ -11,7 +10,7 @@ function mainDiv() {
             'z-index': '1'
 });
     //选择栏
-    d3.select("#warpDiv").append("div").attr("id","selectDiv")
+    d3.select("#selectDiv")
     .style({
     'position':'absolute',
     "left" : "0px",
@@ -21,7 +20,7 @@ function mainDiv() {
     "border": "solid 1px black"
     });
     //展示栏
-    d3.select("#warpDiv").append("div").attr("id","textDiv")
+    d3.select("#textDiv")
     .style({
     'position':'absolute',
     "left" : "500px",
@@ -30,7 +29,8 @@ function mainDiv() {
     "height": "700px",
     "border": "solid 1px black"
     });
-    d3.select("#textDiv").append("div").attr("id","audioSelect").style({
+    d3.select("#audioSelect")
+    .style({
     'position':'absolute',
     "left" : "50px",
     "top" : "50px",
@@ -39,7 +39,7 @@ function mainDiv() {
     "border": "solid 1px black"
     })
     //语音转文字
-    d3.select("#selectDiv").append("div").attr("id","funcDiv1")
+    d3.select("#funcDiv1")
     .style({
     'position':'absolute',
     "left" : "100px",
@@ -55,7 +55,7 @@ function mainDiv() {
      'text-align': 'center'
     });
     //文字查询
-    d3.select("#selectDiv").append("div").attr("id","funcDiv2")
+    d3.select("#funcDiv2")
     .style({
     'position':'absolute',
     "left" : "100px",
