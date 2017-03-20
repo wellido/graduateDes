@@ -44,6 +44,7 @@ d3.select("#stop-recording").style({
     "left":"320px"
 }).on("click",function(){
     mediaRecorder.stop();
+    console.log(mediaRecorder);
     d3.select("#recordingStatus").html("停止");
 }).html("停止").style({
     'color': 'white',
@@ -63,8 +64,8 @@ d3.select("#upload-recording").style({
      "left":"440px"
 }).on("click",function(){
     mediaRecorder.save();
-    d3.select("#recordingStatus").html("已上传");
-}).html("上传").style({
+    d3.select("#recordingStatus").html("停止");
+}).html("保存").style({
      'color': 'white',
      'vertical-align': 'middle',
      'font-size': '20px',

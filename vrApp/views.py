@@ -3,6 +3,8 @@ from rest_framework import status
 from vrApp.models import vrRecord
 from vrApp.serializers import vrAppSerializer
 from django.http import HttpResponse, JsonResponse
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 
 def index(request, format=None):
@@ -16,6 +18,7 @@ def vrRequst(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
+      #   data = JSONParser().parse(request.data)
         serializer = vrAppSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
