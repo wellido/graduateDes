@@ -44,7 +44,6 @@ d3.select("#stop-recording").style({
     "left":"320px"
 }).on("click",function(){
     mediaRecorder.stop();
-    console.log(mediaRecorder);
     d3.select("#recordingStatus").html("停止");
 }).html("停止").style({
     'color': 'white',

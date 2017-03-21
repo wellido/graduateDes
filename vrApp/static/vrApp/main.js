@@ -1,8 +1,8 @@
 var mediaConstraints = {
     audio: true
     };
-var reader = new FileReader();
 function onMediaSuccess(stream) {
+    var reader = new FileReader();
     mediaRecorder = new MediaStreamRecorder(stream);
     mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
        mediaRecorder.ondataavailable = function (blob) {
@@ -18,8 +18,6 @@ function onMediaSuccess(stream) {
                     'audioFileRes':binaryData
                 }),
                 url: "/vrData/",
-                cache: false,
-                processData: false,
                 contentType: "application/json",
                 success: function (data) {
                     console.log(data);

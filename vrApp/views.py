@@ -22,8 +22,8 @@ def vrRequst(request):
         serializer = vrAppSerializer(data=data, many=True)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse("11", status=status.HTTP_201_CREATED)
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse(serializer.data, safe=False, status=status.HTTP_201_CREATED)
+        return JsonResponse(serializer.errors, safe=False,status=status.HTTP_400_BAD_REQUEST)
 
 
 
