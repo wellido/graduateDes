@@ -18,11 +18,11 @@ def vrRequst(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
-      #   data = JSONParser().parse(request.data)
-        serializer = vrAppSerializer(data=request.data)
+        data = request.POST
+        serializer = vrAppSerializer(data=data, many=True)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+            return JsonResponse("11", status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

@@ -7,3 +7,10 @@ aaa=vrRecord(audioFile="1111",textFile="5555")
 aaa.save()
 serializer = vrAppSerializer(aaa)
 serializer.data
+
+
+
+
+
+
+{"textFile": ["This field is required."], "audioFile": ["This field is required."]}

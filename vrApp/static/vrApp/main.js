@@ -1,28 +1,26 @@
 var mediaConstraints = {
     audio: true
     };
-//var dataArray = new ArrayBuffer();
+var reader = new FileReader();
 function onMediaSuccess(stream) {
     mediaRecorder = new MediaStreamRecorder(stream);
-    console.log(stream);
     mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
-    mediaRecorder.ondataavailable = function (blob) {
-//    var reader=new FileReader();
-//    reader.readAsArrayBuffer(blob);
-//    reader.onloadend = function(e) {
-//        console.log(e.target.result);
-//    }
+       mediaRecorder.ondataavailable = function (blob) {
+       var binaryData;
+       reader.readAsBinaryString(blob);
+       reader.onload = function (e) {
+            binaryData=e.target.result;
             $.ajax({
                 type: 'POST',
-                data: {
+                data: JSON.stringify({
                     'audioFile': Date.parse(new Date()),
-                    'textFile': "",
-                    'audioFileRes':blob
-                },
+                    'textFile': "11",
+                    'audioFileRes':binaryData
+                }),
                 url: "/vrData/",
                 cache: false,
                 processData: false,
-                contentType: false,
+                contentType: "application/json",
                 success: function (data) {
                     console.log(data);
                     if (data.nodes == null) {
@@ -31,15 +29,14 @@ function onMediaSuccess(stream) {
                     }
                 }
             });
+       }
     };
-    mediaRecorder.start(10000);
+    mediaRecorder.start(5000);
 }
 function onMediaError(e) {
     console.error('media error', e);
 }
 var mediaRecorder;
- var blobData = new Blob([],{});
-console.log(blobData);
 window.onload = function() {
     mainDiv()
     audioRec();
