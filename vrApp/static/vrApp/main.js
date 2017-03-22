@@ -10,21 +10,20 @@ function onMediaSuccess(stream) {
        reader.readAsBinaryString(blob);
        reader.onload = function (e) {
             binaryData=e.target.result;
-            $.ajax({
-                type: 'POST',
-                data: JSON.stringify({
+            var postData=JSON.stringify({
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
                     'audioFileRes':binaryData
-                }),
+                });
+            $.ajax({
+                type: 'POST',
+                data: postData,
                 url: "/vrData/",
-                contentType: "application/json",
+                cache : false,
+                contentType : false,
+                processData : false,
                 success: function (data) {
                     console.log(data);
-                    if (data.nodes == null) {
-                        alert("error");
-                        return;
-                    }
                 }
             });
        }
