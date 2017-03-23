@@ -13,7 +13,7 @@ function onMediaSuccess(stream) {
             var postData=JSON.stringify({
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
-                    'audioFileRes':binaryData
+                    'audioBinary':binaryData
                 });
             $.ajax({
                 type: 'POST',

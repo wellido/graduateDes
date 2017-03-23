@@ -13,7 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-conn = sqlite3.connect("/home/april/graduateDes/db.sqlite3")
+conn = sqlite3.connect("/home/april/graduateDes/db.sqlite3",check_same_thread = False)
 cu=conn.cursor();
 
 def index(request, format=None):
@@ -22,13 +22,13 @@ def index(request, format=None):
 def prn_obj(obj):
     print '\n'.join(['%s:%s' % item for item in obj.__dict__.items()])
 
-def insertinaryToDB(conn, cu, audioFile, audioFileRes):
+def insertinaryToDB(conn, cu, audioFile, audioBinary):
 
-	cu.execute("UPDATE vrrecord audioFileRes = '"+audioFileRes+"' WHERE audioFile = '"+str(audioFile)+"'" )
+	cu.execute("UPDATE vrrecord audioBinary = '"+str(audioBinary)+"' WHERE audioFile = '"+str(audioFile)+"'" )
 	conn.commit()
 
-def insertToDB(conn, cu, audioFile, textFile,audioFileRes):
-    cu.execute("INSERT INTO vrrecord(audioFile, textFile,audioFileRes) VALUES (?,?,?)", audioFile, textFile,audioFileRes )
+def insertToDB(conn, cu, audioFile, textFile,audioBinary):
+    cu.execute("INSERT INTO vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", audioFile, textFile,audioBinary )
     conn.commit()
 
 @csrf_exempt
@@ -46,14 +46,15 @@ def vrRequst(request):
         postDict['audioFile']=req['audioFile']
         postDict['textFile']=req['textFile']
         # postDict['audioFileRes']=req['audioFileRes']
-        postDict['audioFileRes']=buffer(req['audioFileRes'])
-        # print isinstance(postDict['audioFileRes'], buffer)
+        postDict['audioBinary']=buffer(req['audioBinary'])
+        # audioBinary=buffer(req['audioBinary'])
         postList=[postDict]
         serializer = vrAppSerializer(data=postList, many=True)
+        # print serializer
         if serializer.is_valid():
             serializer.save()
-            # insertinaryToDB(conn,cu,postDict['audioFile'],postDict['audioFileRes'])
-            # insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioFileRes'])
+            # insertinaryToDB(conn,cu,postDict['audioFile'],audioBinary)
+            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
             return JsonResponse(serializer.data, safe=False, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.data, safe=False,status=status.HTTP_400_BAD_REQUEST)
 
