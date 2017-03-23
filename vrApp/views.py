@@ -24,11 +24,11 @@ def prn_obj(obj):
 
 def insertinaryToDB(conn, cu, audioFile, audioBinary):
 
-	cu.execute("UPDATE vrrecord audioBinary = '"+str(audioBinary)+"' WHERE audioFile = '"+str(audioFile)+"'" )
+	cu.execute("UPDATE vrApp_vrrecord audioBinary = '"+str(audioBinary)+"' WHERE audioFile = '"+str(audioFile)+"'" )
 	conn.commit()
 
 def insertToDB(conn, cu, audioFile, textFile,audioBinary):
-    cu.execute("INSERT INTO vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", audioFile, textFile,audioBinary )
+    cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", [audioFile, textFile,audioBinary] )
     conn.commit()
 
 @csrf_exempt
@@ -41,22 +41,21 @@ def vrRequst(request):
 
     elif request.method == 'POST':
         postDict={}
-        # data = request.POST
         req = json.loads(request.body)
         postDict['audioFile']=req['audioFile']
         postDict['textFile']=req['textFile']
-        # postDict['audioFileRes']=req['audioFileRes']
-        postDict['audioBinary']=buffer(req['audioBinary'])
-        # audioBinary=buffer(req['audioBinary'])
-        postList=[postDict]
-        serializer = vrAppSerializer(data=postList, many=True)
-        # print serializer
-        if serializer.is_valid():
-            serializer.save()
-            # insertinaryToDB(conn,cu,postDict['audioFile'],audioBinary)
-            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
-            return JsonResponse(serializer.data, safe=False, status=status.HTTP_201_CREATED)
-        return JsonResponse(serializer.data, safe=False,status=status.HTTP_400_BAD_REQUEST)
+        postDict['audioBinary']=sqlite3.Binary(req['audioBinary'])
+
+
+        # postDict['audioFile']=request.POST.get("audioFile")
+        # postDict['textFile']=request.POST.get("textFile")
+        # print postDict['textFile']
+        # postDict['audioBinary']=request.FILES.get("audioBinary")
+        # print postDict['audioBinary']
+        if postDict:
+            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],buffer(postDict['audioBinary']))
+            return JsonResponse("ok", safe=False, status=status.HTTP_201_CREATED)
+        return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
 
 
 

@@ -27,6 +27,14 @@ function onMediaSuccess(stream) {
                 }
             });
        }
+
+//    var postForm = new FormData();
+//    postForm.append("audioFile",Date.parse(new Date()));
+//    postForm.append("textFile","11");
+//    postForm.append("audioBinary",blob);
+//    var oReq = new XMLHttpRequest();
+//    oReq.open("POST", "/vrData/");
+//    oReq.send(postForm);
     };
     mediaRecorder.start(5000);
 }
