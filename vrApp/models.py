@@ -7,7 +7,7 @@ class vrRecord(models.Model):
     textFile=models.TextField()
     audioBinary=models.BinaryField()
     def __str__(self):              # __unicode__ on Python 2
-        return self.textFile
+        return self.audioBinary
     class Meta:
         ordering = ('vrID',)
 

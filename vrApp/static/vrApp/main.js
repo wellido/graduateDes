@@ -7,13 +7,25 @@ function onMediaSuccess(stream) {
     mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
        mediaRecorder.ondataavailable = function (blob) {
        var binaryData;
-       reader.readAsBinaryString(blob);
+       reader.readAsArrayBuffer(blob);
        reader.onload = function (e) {
             binaryData=e.target.result;
+            var chars  = new Uint8Array(binaryData);
+            var CHUNK_SIZE = 0x8000;
+            var index = 0;
+            var length = chars.length;
+            var result = '';
+            var slice;
+            while (index < length) {
+              slice = chars.subarray(index, Math.min(index + CHUNK_SIZE, length));
+              result += String.fromCharCode.apply(null, slice);
+              index += CHUNK_SIZE;
+            }
+            console.log(result);
             var postData=JSON.stringify({
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
-                    'audioBinary':binaryData
+                    'audioBinary':result
                 });
             $.ajax({
                 type: 'POST',
@@ -27,14 +39,6 @@ function onMediaSuccess(stream) {
                 }
             });
        }
-
-//    var postForm = new FormData();
-//    postForm.append("audioFile",Date.parse(new Date()));
-//    postForm.append("textFile","11");
-//    postForm.append("audioBinary",blob);
-//    var oReq = new XMLHttpRequest();
-//    oReq.open("POST", "/vrData/");
-//    oReq.send(postForm);
     };
     mediaRecorder.start(5000);
 }

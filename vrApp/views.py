@@ -28,7 +28,7 @@ def insertinaryToDB(conn, cu, audioFile, audioBinary):
 	conn.commit()
 
 def insertToDB(conn, cu, audioFile, textFile,audioBinary):
-    cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", [audioFile, textFile,audioBinary] )
+    cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", (audioFile, textFile,audioBinary) )
     conn.commit()
 
 @csrf_exempt
@@ -44,16 +44,9 @@ def vrRequst(request):
         req = json.loads(request.body)
         postDict['audioFile']=req['audioFile']
         postDict['textFile']=req['textFile']
-        postDict['audioBinary']=sqlite3.Binary(req['audioBinary'])
-
-
-        # postDict['audioFile']=request.POST.get("audioFile")
-        # postDict['textFile']=request.POST.get("textFile")
-        # print postDict['textFile']
-        # postDict['audioBinary']=request.FILES.get("audioBinary")
-        # print postDict['audioBinary']
+        postDict['audioBinary']=req['audioBinary']
         if postDict:
-            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],buffer(postDict['audioBinary']))
+            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
             return JsonResponse("ok", safe=False, status=status.HTTP_201_CREATED)
         return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
 
