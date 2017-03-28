@@ -6,12 +6,16 @@ from django.http import HttpResponse, JsonResponse
 import json
 import sqlite3
 import sys
-# from rest_framework.renderers import JSONRenderer
-# from rest_framework.parsers import JSONParser
+import wave
+import commands
+import os
+import subprocess
 from django.views.decorators.csrf import csrf_exempt
-
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+# kaldi run.sh path
+cmd = '/home/april/kaldi/egs/thchs30/online_demo/run.sh'
 
 conn = sqlite3.connect("/home/april/graduateDes/db.sqlite3",check_same_thread = False)
 cu=conn.cursor();
@@ -23,13 +27,24 @@ def prn_obj(obj):
     print '\n'.join(['%s:%s' % item for item in obj.__dict__.items()])
 
 def insertinaryToDB(conn, cu, audioFile, audioBinary):
-
 	cu.execute("UPDATE vrApp_vrrecord audioBinary = '"+str(audioBinary)+"' WHERE audioFile = '"+str(audioFile)+"'" )
 	conn.commit()
 
 def insertToDB(conn, cu, audioFile, textFile,audioBinary):
     cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", (audioFile, textFile,audioBinary) )
     conn.commit()
+
+# def output_wave(path, frames):
+    # Python 3.X allows the use of the with statement
+    # with wave.open(path,'w') as output:
+    #     # Set parameters for output WAV file
+    #     output.setparams((2,2,rate,0,'NONE','not compressed'))
+    #     output.writeframes(frames)
+
+    # output = wave.open(path,'w')
+    # output.setparams((2,2,rate,0,'NONE','not compressed'))
+    # output.writeframes(frames)
+    # output.close()
 
 @csrf_exempt
 def vrRequst(request):
@@ -45,6 +60,14 @@ def vrRequst(request):
         postDict['audioFile']=req['audioFile']
         postDict['textFile']=req['textFile']
         postDict['audioBinary']=req['audioBinary']
+        # with open("audio.wav", 'wb') as file:
+        #     file.write(postDict['audioBinary'])
+        p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        while p.poll() == None:
+            line = p.stdout.readline()
+            print line
+            shellResult=""
+            shellResult = shellResult + line
         if postDict:
             insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
             return JsonResponse("ok", safe=False, status=status.HTTP_201_CREATED)
