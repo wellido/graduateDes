@@ -16,6 +16,7 @@ sys.setdefaultencoding('utf-8')
 
 # kaldi run.sh path
 cmd = '/home/april/kaldi/egs/thchs30/online_demo/run.sh'
+sudo_password = 'xiaojing527'
 
 conn = sqlite3.connect("/home/april/graduateDes/db.sqlite3",check_same_thread = False)
 cu=conn.cursor();
@@ -34,18 +35,6 @@ def insertToDB(conn, cu, audioFile, textFile,audioBinary):
     cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) VALUES (?,?,?)", (audioFile, textFile,audioBinary) )
     conn.commit()
 
-# def output_wave(path, frames):
-    # Python 3.X allows the use of the with statement
-    # with wave.open(path,'w') as output:
-    #     # Set parameters for output WAV file
-    #     output.setparams((2,2,rate,0,'NONE','not compressed'))
-    #     output.writeframes(frames)
-
-    # output = wave.open(path,'w')
-    # output.setparams((2,2,rate,0,'NONE','not compressed'))
-    # output.writeframes(frames)
-    # output.close()
-
 @csrf_exempt
 def vrRequst(request):
     if request.method == 'GET':
@@ -62,31 +51,8 @@ def vrRequst(request):
         postDict['audioBinary']=req['audioBinary']
         # with open("audio.wav", 'wb') as file:
         #     file.write(postDict['audioBinary'])
-        # p = os.popen(cmd)
-        p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-
-        # p = create_multiprocess(target=getsmoketest,
-        # args=[intranetip, username, password])
-        #
-        # def create_multiprocess(target, args=()):
-        #      p = multiprocessing.Process(target=target, args=args)
-        #      p.start()
-        #      return p
-        # script_path = os.path.join(BASE_DIR, "common/smoketestreport/runsmoketestcases.sh")
-        # args = ["sh", "-x", script_path, self.ip, self.user, self.password, BASE_DIR]
-        # exit_value = 1
-        # try:
-        #    process = subprocess.Popen(args, bufsize=1, stdout=subprocess.PIPE, close_fds=True, preexec_fn=os.setsid,
-        #                            universal_newlines=True)
-        #    while process.poll() is None:
-        #       out_put_log = process.stdout.readline()
-        #       self.logger.output_shelllog_to_logger(out_put_log)
-        #       process.wait()
-        #    exit_value = process.returncode
-        # except Exception, e:
-        #    self.logger.error(e.message)
-
-
+        # p = os.system('echo %s|sudo -S %s' % (sudo_password, cmd))
+        p = subprocess.Popen(['sudo', '-S']+cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
         while p.poll() == None:
             line = p.stdout.readline()
