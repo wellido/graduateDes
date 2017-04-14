@@ -21,7 +21,6 @@ function onMediaSuccess(stream) {
               result += String.fromCharCode.apply(null, slice);
               index += CHUNK_SIZE;
             }
-            console.log(result);
             var postData=JSON.stringify({
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
@@ -35,7 +34,8 @@ function onMediaSuccess(stream) {
                 contentType : false,
                 processData : false,
                 success: function (data) {
-                    console.log(data);
+                    var revData = data;
+                    d3.select("#textDisply").html(revData);
                 }
             });
        }
