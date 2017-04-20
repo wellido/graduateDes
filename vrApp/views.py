@@ -82,7 +82,6 @@ def vrRequst(request):
         with open(audioPath+"audio.wav", 'wb') as file:
             file.write(postDict['audioBinary'])
         kaldiResult = stringSplit(sshKaldi());
-        # kaldiPost = {'data':kaldiResult}
         kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
         print kaldiPostJson
         if postDict:

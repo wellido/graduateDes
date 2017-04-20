@@ -9,6 +9,9 @@ function audioToText() {
     "width" : "700px",
     "height": "350px",
     "border": "solid 1px black"
+    }).html("").style({
+     'color': 'white',
+     'font-size': '20px',
     });
 })
 }
