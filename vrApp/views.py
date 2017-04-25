@@ -81,13 +81,19 @@ def vrRequst(request):
         rmAudio()
         with open(audioPath+"audio.wav", 'wb') as file:
             file.write(postDict['audioBinary'])
-        kaldiResult = stringSplit(sshKaldi());
-        kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
-        print kaldiPostJson
-        if postDict:
-            insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
-            return JsonResponse(kaldiPostJson, safe=False, status=status.HTTP_201_CREATED)
-        return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
+        if req['isKaldi']==0:
+            kaldiResult = stringSplit(sshKaldi());
+            kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
+            print kaldiPostJson
+            if postDict:
+                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
+                return JsonResponse(kaldiPostJson, safe=False, status=status.HTTP_201_CREATED)
+            return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
+        else:
+            if postDict:
+                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
+                return JsonResponse("ok", safe=False, status=status.HTTP_201_CREATED)
+            return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
 
 
 

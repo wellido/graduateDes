@@ -1,6 +1,7 @@
 var mediaConstraints = {
     audio: true
     };
+var isKaldi=0;
 function onMediaSuccess(stream) {
     var reader = new FileReader();
     mediaRecorder = new MediaStreamRecorder(stream);
@@ -22,22 +23,23 @@ function onMediaSuccess(stream) {
               index += CHUNK_SIZE;
             }
             var postData=JSON.stringify({
+                    'isKadi': isKaldi,
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
                     'audioBinary':result
                 });
-            $.ajax({
-                type: 'POST',
-                data: postData,
-                url: "/vrData/",
-                cache : false,
-                contentType : false,
-                processData : false,
-                success: function (data) {
-                    var revData = data;
-                    d3.select("#textDisply").html(revData);
-                }
-            });
+                $.ajax({
+                    type: 'POST',
+                    data: postData,
+                    url: "/vrData/",
+                    cache : false,
+                    contentType : false,
+                    processData : false,
+                    success: function (data) {
+                        var revData = data;
+                        d3.select("#textDisply").html(revData);
+                    }
+                });
        }
     };
     mediaRecorder.start(5000);

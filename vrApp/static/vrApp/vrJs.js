@@ -9,6 +9,49 @@ function mainDiv() {
             "opacity": 1.0,
             'z-index': '1'
 });
+    //kaldi模式
+    d3.select("#kaldiDemo").style({
+    'position':'absolute',
+    "left" : "1000px",
+    "top" : "20px",
+    "width" : "100px",
+    "height": "50px",
+    "border": "solid 1px black",
+    "background-color":"#3469a4",
+    'border-radius': '4px',
+    'cursor': 'pointer'
+    }).on("click",function(){
+        isKaldi=0;
+        d3.select(this).style("background-color","#3469a4");
+        d3.select("#apiDeme").style("background-color","");
+    }).html("kaldi版").style({
+     'vertical-align': 'middle',
+     'font-size': '20px',
+     'line-height': '50px',
+     'color':'white',
+     'text-align': 'center'
+    });
+    //api模式
+    d3.select("#apiDeme").style({
+    'position':'absolute',
+    "left" : "1100px",
+    "top" : "20px",
+    "width" : "100px",
+    "height": "50px",
+    "border": "solid 1px black",
+    'border-radius': '4px',
+    'cursor': 'pointer'
+    }).on("click",function(){
+        isKaldi=1;
+        d3.select(this).style("background-color","#3469a4");
+        d3.select("#kaldiDemo").style("background-color","");
+    }).html("api版").style({
+     'vertical-align': 'middle',
+     'font-size': '20px',
+     'line-height': '50px',
+     'color':'white',
+     'text-align': 'center'
+    });
     //选择栏
     d3.select("#selectDiv")
     .style({
@@ -52,6 +95,7 @@ function mainDiv() {
      'vertical-align': 'middle',
       'line-height': '50px',
      'font-size': '20px',
+     'color': 'white',
      'text-align': 'center'
     });
     //文字查询
@@ -68,6 +112,7 @@ function mainDiv() {
      'vertical-align': 'middle',
      'font-size': '20px',
      'line-height': '50px',
+     'color':'white',
      'text-align': 'center'
     });
 
