@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11693e83-33e3-47b5-ace6-3f9d28a96189" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" afterPath="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/main.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/views.py" afterPath="$PROJECT_DIR$/vrApp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="graduateDes.iws" />
@@ -52,10 +49,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vrApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5368782">
-              <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.3516295">
+              <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#16#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -101,24 +98,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/templates/vrApp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.814815">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="runVr.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="25" />
-              <folding />
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding>
+                <element signature="e#16#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,13 +145,13 @@
         <option value="$PROJECT_DIR$/vrApp/models.py" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/test.txt" />
         <option value="$USER_HOME$/sshTest.py" />
-        <option value="$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/audioRec.js" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js" />
         <option value="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" />
-        <option value="$PROJECT_DIR$/vrApp/views.py" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/main.js" />
+        <option value="$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py" />
+        <option value="$PROJECT_DIR$/vrApp/views.py" />
       </list>
     </option>
   </component>
@@ -172,9 +159,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -200,7 +187,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,6 +265,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -466,7 +453,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24757643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -536,7 +523,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#16#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,7 +596,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#16#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,7 +648,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="45" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="45" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#16#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,14 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -868,10 +847,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/templates/vrApp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.814815">
+        <state vertical-scroll-proportion="0.02877698">
           <caret line="15" column="20" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="e#16#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -895,17 +884,17 @@
     <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5368782">
-          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.3516295">
+          <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#16#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
