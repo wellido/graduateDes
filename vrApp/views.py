@@ -43,7 +43,7 @@ def insertToDB(conn, cu, audioFile, textFile,audioBinary):
 def rmAudio():
     sshClient = ssh.SSHClient()
     sshClient.set_missing_host_key_policy(ssh.AutoAddPolicy())
-    sshClient.connect("202.115.24.67", port=22, username="april", password="xiaojing527")
+    sshClient.connect("192.168.1.108", port=22, username="april", password="xiaojing527")
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/online_demo/"
                                                   "online-data/audio/;rm audio.wav")
     if stdout.channel.recv_exit_status()== 0:
@@ -54,7 +54,7 @@ def rmAudio():
 def sshKaldi():
     sshClient = ssh.SSHClient()
     sshClient.set_missing_host_key_policy(ssh.AutoAddPolicy())
-    sshClient.connect("202.115.24.67", port=22, username="april", password="xiaojing527")
+    sshClient.connect("192.168.1.108", port=22, username="april", password="xiaojing527")
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/online_demo/;"
                                                    "bash run.sh")
     readRrturn = stdout.read()

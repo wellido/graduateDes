@@ -2,6 +2,8 @@ function findText() {
 d3.select("#funcDiv2").on("click",function() {
     if(d3.select("#textDisply"))
     {d3.select("#textDisply").remove();}
+    d3.select(this).style("background-color","#3469a4");
+    d3.select("#funcDiv1").style("background-color","#");
     d3.select("#textDiv").append("div").attr("id","sendText").style({
     'position':'absolute',
     "left" : "50px",

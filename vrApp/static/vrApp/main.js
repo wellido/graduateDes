@@ -23,7 +23,7 @@ function onMediaSuccess(stream) {
               index += CHUNK_SIZE;
             }
             var postData=JSON.stringify({
-                    'isKadi': isKaldi,
+                    'isKaldi': isKaldi,
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
                     'audioBinary':result
