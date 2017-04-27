@@ -5,6 +5,9 @@ var isKaldi=0;
 function onMediaSuccess(stream) {
     var reader = new FileReader();
     mediaRecorder = new MediaStreamRecorder(stream);
+//    mediaRecorder.sampleRate=16000;
+    mediaRecorder.audioChannels = 1;
+    mediaRecorder.recorderType = StereoAudioRecorder;
     mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
        mediaRecorder.ondataavailable = function (blob) {
        var binaryData;
@@ -28,6 +31,20 @@ function onMediaSuccess(stream) {
                     'textFile': "11",
                     'audioBinary':result
                 });
+                var postWav = new FormData();
+                postWav.append('wav',blob);
+                $.ajax({
+                    type: 'POST',
+                    data: postWav,
+                    url: "/vrWav/",
+                    cache : false,
+                    contentType : false,
+                    processData : false,
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
+
                 $.ajax({
                     type: 'POST',
                     data: postData,

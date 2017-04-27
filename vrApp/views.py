@@ -14,6 +14,7 @@ import urllib, urllib2, pycurl
 import base64
 import StringIO
 import ssh
+from django import forms
 from django.views.decorators.csrf import csrf_exempt
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -111,7 +112,21 @@ def use_cloud(token):
     crulPost.setopt(crulPost.POSTFIELDS, audio_data)
     crulPost.setopt(crulPost.POSTFIELDSIZE, f_len)
     crulPost.perform()
+    print apiResult.getvalue()
     return stringSplit2(apiResult.getvalue())
+
+def handle_uploaded_file(f):
+    rmAudio()
+    with open(audioPath+"audio.wav", 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+# 生成wav
+@csrf_exempt
+def wavMake(request):
+    if request.method == 'POST':
+        handle_uploaded_file(request.FILES['wav'])
+        return HttpResponse('make wav ok!')
+
 # 存放数据
 @csrf_exempt
 def vrRequst(request):
@@ -127,9 +142,6 @@ def vrRequst(request):
         postDict['audioFile']=req['audioFile']
         postDict['textFile']=req['textFile']
         postDict['audioBinary']=req['audioBinary']
-        rmAudio()
-        with open(audioPath+"audio.wav", 'wb') as file:
-            file.write(postDict['audioBinary'])
         if req['isKaldi']==0:
             kaldiResult = stringSplit(sshKaldi());
             kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
@@ -146,6 +158,7 @@ def vrRequst(request):
                 apiPostJson = json.dumps(apiRes,ensure_ascii=False)
                 return JsonResponse(apiPostJson, safe=False, status=status.HTTP_201_CREATED)
             return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
+
 
 
 
