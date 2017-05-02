@@ -14,17 +14,18 @@
 <div id="warpDiv" style="background:url(/static/vrApp/img/11.jpeg)">
     <div id="kaldiDemo"></div>
     <div id="apiDeme"></div>
-    <div id="selectDiv">
+    <div id="selectDiv" style="background:url(/static/vrApp/img/12.jpeg)">
         <div id="funcDiv1"></div>
         <div id="funcDiv2"></div>
     </div>
     <div id="textDiv">
         <div id="audioSelect" style="background:url(/static/vrApp/img/timg.jpeg)">
             <div id="recordingStatus"></div>
-            <button id="start-recording"></button>
-            <button id="stop-recording"   ></button>
-            <button id="upload-recording" ></button>
+            <button id="start-recording" style="background:url(/static/vrApp/img/start.png)"></button>
+            <button id="stop-recording"  style="background:url(/static/vrApp/img/stop.png)" ></button>
+            <button id="upload-recording" style="background:url(/static/vrApp/img/save.png)"></button>
         </div>
+        <div id="textDisplay" style="background:url(/static/vrApp/img/text.jpeg)"></div>
     </div>
 </div>
 <script src="{% static 'vrApp/main.js' %}" type="text/javascript"></script>
@@ -34,7 +35,9 @@
 <script src="{% static 'vrApp/audioRec.js' %}" type="text/javascript"></script>
 <script src="{% static 'vrApp/audioToText.js' %}" type="text/javascript"></script>
 <script src="{% static 'vrApp/findText.js' %}" type="text/javascript"></script>
-<!--<script src="{% static 'vrApp/main.js' %}" type="text/javascript"></script>-->
+<script src="{% static 'vrApp/textDisplay.js' %}" type="text/javascript"></script>
+<script src="{% static 'vrApp/svgDraw.js' %}" type="text/javascript"></script>
+
 
 </body>
 </html>

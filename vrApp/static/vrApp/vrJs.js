@@ -59,7 +59,8 @@ function mainDiv() {
     "left" : "0px",
     "top" : "100px",
     "width" : "400px",
-    "height": "700px",
+    "height": "600px",
+    'border-radius': '5px',
     "border": "solid 1px black"
     });
     //展示栏
@@ -69,16 +70,16 @@ function mainDiv() {
     "left" : "500px",
     "top" : "100px",
     "width" : "800px",
-    "height": "700px",
-    "border": "solid 1px black"
+    "height": "700px"
     });
     d3.select("#audioSelect")
     .style({
     'position':'absolute',
     "left" : "50px",
-    "top" : "50px",
+    "top" : "0px",
     "width" : "700px",
     "height": "200px",
+    'border-radius': '5px',
     "border": "solid 1px black"
     })
     //语音转文字
@@ -95,7 +96,7 @@ function mainDiv() {
      'vertical-align': 'middle',
       'line-height': '50px',
      'font-size': '20px',
-     'color': 'white',
+     'color': 'black',
      'text-align': 'center'
     });
     //文字查询
@@ -112,7 +113,7 @@ function mainDiv() {
      'vertical-align': 'middle',
      'font-size': '20px',
      'line-height': '50px',
-     'color':'white',
+     'color':'black',
      'text-align': 'center'
     });
 

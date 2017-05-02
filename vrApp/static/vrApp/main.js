@@ -65,8 +65,10 @@ function onMediaError(e) {
 }
 var mediaRecorder;
 window.onload = function() {
-    mainDiv()
+    mainDiv();
     audioRec();
     audioToText();
     findText();
+    textDisplay();
+    svgDraw();
 }

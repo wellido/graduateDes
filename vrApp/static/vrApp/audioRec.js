@@ -35,12 +35,13 @@ d3.select("#audioSelect").append("input").attr({
 d3.select("#start-recording").style({
     'position':'absolute',
     "top" : "100px",
-    "width" : "100px",
-    "height": "70px",
+    "width" : "80px",
+    "height": "80px",
     "border": "solid 1px black",
     'cursor': 'pointer',
-    'border-radius': '5px',
+    'border-radius': '80px',
     "background-color":"#3469a4",
+    "background-size":"cover",
      "left":"200px"
 }).on("click",function(){
     navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
@@ -53,42 +54,34 @@ d3.select("#start-recording").style({
             d3.select("#timeStatus").attr("value", toDub(m)+":"+toDub(s));
         },1000/60);
     d3.select("#recordingStatus").html("录音中" );
-}).html("开始").style({
-     'color': 'white',
-     'vertical-align': 'middle',
-     'font-size': '20px',
-     'text-align': 'center'
 });
 d3.select("#stop-recording").style({
     'position':'absolute',
     "top" : "100px",
-    "width" : "100px",
-    "height": "70px",
+    "width" : "80px",
+    "height": "80px",
     "border": "solid 1px black",
     'cursor': 'pointer',
-    'border-radius': '5px',
+    'border-radius': '80px',
     "background-color":"#3469a4",
+    "background-size":"cover",
     "left":"320px"
 }).on("click",function(){
     mediaRecorder.stop();
     clearInterval(timer);
     n=0;
     d3.select("#recordingStatus").html("停止");
-}).html("停止").style({
-    'color': 'white',
-    'vertical-align': 'middle',
-    'font-size': '20px',
-    'text-align': 'center'
 });
 d3.select("#upload-recording").style({
     'position':'absolute',
     "top" : "100px",
-    "width" : "100px",
-    "height": "70px",
+    "width" : "80px",
+    "height": "80px",
     "border": "solid 1px black",
     'cursor': 'pointer',
-    'border-radius': '5px',
+    'border-radius': '80px',
     "background-color":"#3469a4",
+    "background-size":"cover",
      "left":"440px"
 }).on("click",function(){
     mediaRecorder.save();
@@ -96,11 +89,6 @@ d3.select("#upload-recording").style({
     n=0;
     d3.select("#recordingStatus").html("停止");
     d3.select("#timeStatus").attr("value", "00:00");
-}).html("保存").style({
-     'color': 'white',
-     'vertical-align': 'middle',
-     'font-size': '20px',
-     'text-align': 'center'
 });
 }
 
