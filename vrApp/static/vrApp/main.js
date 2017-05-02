@@ -5,7 +5,6 @@ var isKaldi=0;
 function onMediaSuccess(stream) {
     var reader = new FileReader();
     mediaRecorder = new MediaStreamRecorder(stream);
-//    mediaRecorder.sampleRate=16000;
     mediaRecorder.audioChannels = 1;
     mediaRecorder.recorderType = StereoAudioRecorder;
     mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav

@@ -14,8 +14,15 @@ import urllib, urllib2, pycurl
 import base64
 import StringIO
 import ssh
-from django import forms
+import paramiko
 from django.views.decorators.csrf import csrf_exempt
+from paramiko import SSHClient
+
+class SSHClient_noauth(SSHClient):
+
+    def _auth(self, username, *args):
+        self._transport.auth_none(username)
+        return
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -40,27 +47,46 @@ def insertToDB(conn, cu, audioFile, textFile,audioBinary):
     cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) "
                "VALUES (?,?,?)", (audioFile, textFile,audioBinary) )
     conn.commit()
+# 建立ssh连接
+paramiko.util.log_to_file("filename.log")
+def sshConnct(sshClient):
+    sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    sshClient.connect("202.115.24.74", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
+
 # 删除旧wav
 def rmAudio():
-    sshClient = ssh.SSHClient()
-    sshClient.set_missing_host_key_policy(ssh.AutoAddPolicy())
-    sshClient.connect("192.168.1.108", port=22, username="april", password="xiaojing527")
+    sshClient = paramiko.SSHClient()
+    sshConnct(sshClient)
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/online_demo/"
                                                   "online-data/audio/;rm audio.wav")
     if stdout.channel.recv_exit_status()== 0:
         print "delete old audio success."
     else :
         print "delete old audio error."
+    sshClient.close()
+# 改变wav采样率
+def samplingRateChange():
+    sshClient = paramiko.SSHClient()
+    sshConnct(sshClient)
+    stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/"
+                                                   "online_demo/online-data/audio/;"
+                                                   "sox audio.wav -r 8000 audio.wav")
+    if stdout.channel.recv_exit_status()== 0:
+        print "change sampling-rate success."
+    else :
+        print "change sampling-rate error."
+    sshClient.close()
 # 远程操纵kaldi
 def sshKaldi():
-    sshClient = ssh.SSHClient()
-    sshClient.set_missing_host_key_policy(ssh.AutoAddPolicy())
-    sshClient.connect("192.168.1.108", port=22, username="april", password="xiaojing527")
+    sshClient = paramiko.SSHClient()
+    sshConnct(sshClient)
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/online_demo/;"
                                                    "bash run.sh")
     readRrturn = stdout.read()
     print readRrturn
+    sshClient.close()
     return readRrturn
+
 # kaldi返回结果处理
 def stringSplit(str):
     str1="ce!"
@@ -120,6 +146,7 @@ def handle_uploaded_file(f):
     with open(audioPath+"audio.wav", 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
+    samplingRateChange()
 # 生成wav
 @csrf_exempt
 def wavMake(request):
