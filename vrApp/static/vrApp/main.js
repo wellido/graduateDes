@@ -2,6 +2,7 @@ var mediaConstraints = {
     audio: true
     };
 var isKaldi=0;
+var functionNum;
 function onMediaSuccess(stream) {
     var reader = new FileReader();
     mediaRecorder = new MediaStreamRecorder(stream);
@@ -53,7 +54,12 @@ function onMediaSuccess(stream) {
                     processData : false,
                     success: function (data) {
                         var revData = data;
+                        if(functionNum == 0){
                         d3.select("#textDisply").html(revData);
+                        } else {
+
+
+                        }
                     }
                 });
        }
@@ -71,4 +77,7 @@ window.onload = function() {
     findText();
     textDisplay();
     svgDraw();
+    svgDraw2();
+    svgDraw3();
+    textBox();
 }

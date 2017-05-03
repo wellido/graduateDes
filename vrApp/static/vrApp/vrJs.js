@@ -1,3 +1,4 @@
+//主体样式
 function mainDiv() {
    //主div
     d3.select('#warpDiv').style({
@@ -6,9 +7,22 @@ function mainDiv() {
             'right':'0px',
             'width': '1440px',
             'height': '960px',
+            "background-color":"gray",
             "opacity": 1.0,
             'z-index': '1'
 });
+    //文本框div
+    d3.select("#textBox").style({
+    'position':'absolute',
+    "left" : "350px",
+    "top" : "150px",
+    "width" : "500px",
+    "height": "400px",
+    'border-radius': '5px',
+    "background-color":"gray",
+    "opacity": 0.0,
+    "z-index": "-1"
+    })
     //kaldi模式
     d3.select("#kaldiDemo").style({
     'position':'absolute',
@@ -80,6 +94,7 @@ function mainDiv() {
     "width" : "700px",
     "height": "200px",
     'border-radius': '5px',
+    "background-size":"cover",
     "border": "solid 1px black"
     })
     //语音转文字
@@ -116,5 +131,20 @@ function mainDiv() {
      'color':'black',
      'text-align': 'center'
     });
+    //传文本按钮
+    d3.select("#textUpload").style({
+    'position':'absolute',
+    "top" : "280px",
+    "width" : "80px",
+    "height": "80px",
+    "border": "solid 1px black",
+    'cursor': 'pointer',
+    'border-radius': '80px',
+    "background-color":"#3469a4",
+    "background-size":"cover",
+    "opacity":1,
+    'z-index': '-1',
+    "left":"160px"
+    })
 
 }

@@ -1,3 +1,4 @@
+//文本战士栏样式
 function textDisplay() {
 d3.select("#textDisplay").style({
     'position':'absolute',

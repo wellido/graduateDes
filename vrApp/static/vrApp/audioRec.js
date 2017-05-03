@@ -1,3 +1,4 @@
+//录音模块样式和事件
 function audioRec() {
 var n= 0, timer=null;
 d3.select("#recordingStatus")
@@ -12,7 +13,7 @@ d3.select("#recordingStatus")
      'line-height': '70px',
      'font-size': '20px',
      'text-align': 'center',
-     "color":"white"
+     "color":"black"
 });
 d3.select("#audioSelect").append("input").attr({
     "id":"timeStatus",
@@ -30,7 +31,7 @@ d3.select("#audioSelect").append("input").attr({
     "border-bottom": "transparent",
     'font-size': '20px',
     'padding-left': '10px',
-    'color': 'white',
+    'color': 'black',
 })
 d3.select("#start-recording").style({
     'position':'absolute',
