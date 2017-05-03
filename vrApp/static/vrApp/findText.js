@@ -1,5 +1,4 @@
 //文字定位模块事件
-var textPath;
 function findText() {
     d3.select("#funcDiv2").on("click",function() {
     functionNum = 1;

@@ -1,4 +1,5 @@
 //文字定位输入文本框
+var textInfo;
 function textBox(){
     d3.select("#textArea1").style({
     "position":"absolute",
@@ -23,6 +24,8 @@ function textBox(){
     "opacity":0.0
     });
     d3.select("#selectSvg2").style("z-index","-1");
+    textInfo=$("#textArea1").val();
+    $("#textDisplay").val(textInfo);
     }).html("确定").style({
      'vertical-align': 'middle',
      'font-size': '20px',
@@ -30,4 +33,16 @@ function textBox(){
      'color':'white',
      'text-align': 'center'
       })
+}
+//设置textarea光标函数
+function moveCursor(start,end){
+      var oTextarea = document.getElementById("textDisplay");
+      var start = start
+      var end =  end
+      if(isNaN(start)||isNaN(end)){
+        alert("位置输入错误");
+      }
+        oTextarea.select();
+        oTextarea.selectionStart=start;
+        oTextarea.selectionEnd=end;
 }

@@ -54,11 +54,19 @@ function onMediaSuccess(stream) {
                     processData : false,
                     success: function (data) {
                         var revData = data;
+                        dataLength=revData.length;
+                        revData=revData.substr(1,dataLength-2);
+                        console.log(revData);
                         if(functionNum == 0){
-                        d3.select("#textDisply").html(revData);
+                        $("#textDisplay").val(revData);
                         } else {
-
-
+                        var cursorStart=textInfo.indexOf(revData);
+                        if(cursorStart>0) {
+                        var cursorEnd=revData.length+cursorStart;
+                        moveCursor(cursorStart,cursorEnd);
+                        }else {
+                        alert("没有找到对应文字");
+                        }
                         }
                     }
                 });
@@ -70,6 +78,7 @@ function onMediaError(e) {
     console.error('media error', e);
 }
 var mediaRecorder;
+
 window.onload = function() {
     mainDiv();
     audioRec();
