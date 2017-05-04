@@ -26,6 +26,7 @@ function textBox(){
     d3.select("#selectSvg2").style("z-index","-1");
     textInfo=$("#textArea1").val();
     $("#textDisplay").val(textInfo);
+    $("#textArea1").val("");
     }).html("确定").style({
      'vertical-align': 'middle',
      'font-size': '20px',

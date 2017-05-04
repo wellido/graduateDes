@@ -58,7 +58,11 @@ function onMediaSuccess(stream) {
                         revData=revData.substr(1,dataLength-2);
                         console.log(revData);
                         if(functionNum == 0){
+                        if(revData=="") {
+                        $("#textDisplay").val("识别失败");
+                        } else {
                         $("#textDisplay").val(revData);
+                        }
                         } else {
                         var cursorStart=textInfo.indexOf(revData);
                         if(cursorStart>0) {
@@ -72,7 +76,7 @@ function onMediaSuccess(stream) {
                 });
        }
     };
-    mediaRecorder.start(5000);
+    mediaRecorder.start(30000);
 }
 function onMediaError(e) {
     console.error('media error', e);

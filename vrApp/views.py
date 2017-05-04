@@ -51,26 +51,40 @@ def insertToDB(conn, cu, audioFile, textFile,audioBinary):
 paramiko.util.log_to_file("filename.log")
 def sshConnct(sshClient):
     sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    sshClient.connect("202.115.24.74", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
+    sshClient.connect("192.168.1.115", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
 
 # 删除旧wav
 def rmAudio():
     sshClient = paramiko.SSHClient()
     sshConnct(sshClient)
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/online_demo/"
-                                                  "online-data/audio/;rm audio.wav")
+                                                  "online-data/;rm -rf audio/*")
     if stdout.channel.recv_exit_status()== 0:
         print "delete old audio success."
     else :
         print "delete old audio error."
     sshClient.close()
-# 改变wav采样率
+# 改变wav采样率为8000
 def samplingRateChange():
     sshClient = paramiko.SSHClient()
     sshConnct(sshClient)
     stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/"
                                                    "online_demo/online-data/audio/;"
-                                                   "sox audio.wav -r 8000 audio.wav")
+                                                   "sox audio.wav -r 8000 audio2.wav;"
+                                                   "rm audio.wav")
+    if stdout.channel.recv_exit_status()== 0:
+        print "change sampling-rate success."
+    else :
+        print "change sampling-rate error."
+    sshClient.close()
+# 改变wav采样率为16000
+def samplingRateChange2():
+    sshClient = paramiko.SSHClient()
+    sshConnct(sshClient)
+    stdin, stdout, stderr = sshClient.exec_command("cd /home/april/kaldi/egs/thchs30/"
+                                                   "online_demo/online-data/audio/;"
+                                                   "sox audio.wav -r 16000 audio2.wav;"
+                                                   "rm audio.wav")
     if stdout.channel.recv_exit_status()== 0:
         print "change sampling-rate success."
     else :
@@ -93,7 +107,7 @@ def stringSplit(str):
     str2="%WER"
     index1 = str.index(str1)
     index2 = str.index(str2)
-    return str[index1+3:index2]
+    return str[index1+4:index2-1]
 # api返回结果处理
 def stringSplit2(str):
     str1=":[\""
@@ -116,7 +130,7 @@ def dump_res(buf):
     print buf
 # 调用百度api
 def use_cloud(token):
-    fp = wave.open('/home/april/kaldi/egs/thchs30/online_demo/online-data/audio/audio.wav', 'rb')
+    fp = wave.open('/home/april/kaldi/egs/thchs30/online_demo/online-data/audio/audio2.wav', 'rb')
     nf = fp.getnframes()
     f_len = nf * 2
     audio_data = fp.readframes(nf)
@@ -124,7 +138,7 @@ def use_cloud(token):
     cuid = "48:d2:24:50:ad:84"
     srv_url = 'http://vop.baidu.com/server_api' + '?cuid=' + cuid + '&token=' + token
     http_header = [
-        'Content-Type: audio/pcm; rate=8000',
+        'Content-Type: audio/wav; rate=8000',
         'Content-Length: %d' % f_len
     ]
     apiResult = StringIO.StringIO()
@@ -146,7 +160,6 @@ def handle_uploaded_file(f):
     with open(audioPath+"audio.wav", 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
-    samplingRateChange()
 # 生成wav
 @csrf_exempt
 def wavMake(request):
@@ -170,18 +183,17 @@ def vrRequst(request):
         postDict['textFile']=req['textFile']
         postDict['audioBinary']=req['audioBinary']
         if req['isKaldi']==0:
-            # kaldiResult = stringSplit(sshKaldi());
-            # kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
-            testData="你好啊"
-            testDataPostJson = json.dumps(testData,ensure_ascii=False)
-            # print kaldiPostJson
-            print testDataPostJson
+            samplingRateChange2()
+            kaldiResult = stringSplit(sshKaldi());
+            kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
+            print kaldiPostJson
             if postDict:
                 insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
-                return JsonResponse(testDataPostJson, safe=False, status=status.HTTP_201_CREATED)
+                return JsonResponse(kaldiPostJson, safe=False, status=status.HTTP_201_CREATED)
             return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
         else:
             if postDict:
+                samplingRateChange()
                 insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
                 token = get_token()
                 apiRes = use_cloud(token)

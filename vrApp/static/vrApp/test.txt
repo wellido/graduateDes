@@ -1,5 +1,5 @@
 from vrApp.models import vrRecord
-vrRecord.objects.get(audioFile="1490323926000")
+vrRecord.objects.get(audioFile="1493278428000")
 
 //formdata 传递
     var postForm = new FormData();
