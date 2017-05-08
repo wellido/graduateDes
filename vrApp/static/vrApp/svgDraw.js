@@ -41,6 +41,7 @@ var curve = svg.append("path")
 			 .attr("marker-end","url(#arrow)");
 
 }
+
 function svgDraw2() {
 var svg = d3.select("#selectDiv").append("svg").attr({
 	"id" : "selectSvg",
@@ -49,7 +50,7 @@ var svg = d3.select("#selectDiv").append("svg").attr({
 }).style({
     'position':'absolute',
     "left" : "150px",
-    "top" : "200px",
+    "top" : "300px",
     "z-index": "-1"
 })
 var defs = svg.append("defs");
@@ -77,6 +78,7 @@ var line = svg.append("line")
 			 .attr("marker-end","url(#arrow2)");
 
 }
+
 function svgDraw3() {
 var svg = d3.select("#selectDiv").append("svg").attr({
 	"id" : "selectSvg2",
@@ -85,7 +87,7 @@ var svg = d3.select("#selectDiv").append("svg").attr({
 }).style({
     'position':'absolute',
     "left" : "250px",
-    "top" : "200px",
+    "top" : "300px",
     "z-index": "-1"
 })
 var defs = svg.append("defs");
@@ -111,6 +113,59 @@ var line = svg.append("line")
 			 .attr("stroke","black")
 			 .attr("stroke-width",5)
 			 .attr("marker-end","url(#arrow3)");
+}
+
+function svgDraw4() {
+var svg = d3.select("#selectDiv").append("svg").attr({
+	"id" : "selectSvg3",
+    "width": "100px",
+    "height":"500px"
+}).style({
+    'position':'absolute',
+    "left" : "0px",
+    "top" : "50px"
+})
+var defs = svg.append("defs");
+var arrowMarker = defs.append("marker")
+						.attr("id","arrow4")
+						.attr("markerUnits","strokeWidth")
+					    .attr("markerWidth","5")
+                        .attr("markerHeight","5")
+                        .attr("viewBox","0 0 12 12")
+                        .attr("refX","6")
+                        .attr("refY","6")
+                        .attr("orient","auto");
+var arrow_path = "M2,2 L10,6 L2,10 L6,6 L2,2";
+
+arrowMarker.append("path")
+			.attr("d",arrow_path)
+			.attr("fill","black");
+
+
+var curve_path = "M100,20 T40,250 T80,480";
+var curve = svg.append("path")
+			 .attr("id","hidePath1")
+			 .attr("d",curve_path)
+			 .attr("fill","transparent")
+			 .attr("stroke","black")
+			 .attr("stroke-width",10)
+			 .attr("marker-end","url(#arrow4)")
+			 .style({
+			 	"z-index":"-1",
+    			"opacity":0.0
+			 });
+var curve_path2 = "M100,220 T40,350 T80,480";
+var curve2 = svg.append("path")
+			 .attr("id","hidePath2")
+			 .attr("d",curve_path2)
+			 .attr("fill","transparent")
+			 .attr("stroke","black")
+			 .attr("stroke-width",10)
+			 .attr("marker-end","url(#arrow4)")
+			 .style({
+			     "z-index":"-1",
+   				 "opacity":0.0
+			 });
 
 
 

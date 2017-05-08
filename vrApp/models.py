@@ -5,6 +5,7 @@ class vrRecord(models.Model):
     vrID=models.AutoField(primary_key=True)
     audioFile=models.TextField()
     textFile=models.TextField()
+    textRealFile=models.TextField()
     audioBinary=models.BinaryField()
     def __str__(self):              # __unicode__ on Python 2
         return self.audioBinary

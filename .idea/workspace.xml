@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="11693e83-33e3-47b5-ace6-3f9d28a96189" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filename.log" afterPath="$PROJECT_DIR$/filename.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/findText.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/findText.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" afterPath="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/main.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/models.py" afterPath="$PROJECT_DIR$/vrApp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/serializers.py" afterPath="$PROJECT_DIR$/vrApp/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/test.txt" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/textBox.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/textBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/urls.py" afterPath="$PROJECT_DIR$/vrApp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/views.py" afterPath="$PROJECT_DIR$/vrApp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" afterPath="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="graduateDes.iws" />
@@ -33,30 +39,20 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vrApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.774892">
-              <caret line="185" column="30" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.44864866">
+              <caret line="222" column="26" selection-start-line="222" selection-start-column="26" selection-end-line="222" selection-end-column="26" />
               <folding>
-                <element signature="e#16#51#0" expanded="true" />
+                <element signature="e#16#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/test.txt">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vrApp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runVr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="90" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="90" />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,56 +62,18 @@
         <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vrJs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js">
+      <file leaf-file-name="audioToText.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textDisplay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/textDisplay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textBox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/textBox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vrApp/templates/vrApp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#2;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/findText.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -159,23 +117,24 @@
         <option value="$PROJECT_DIR$/vrApp/migrations/0002_auto_20170310_0036.py" />
         <option value="$PROJECT_DIR$/vrApp/migrations/0004_vrrecord_audiobinary.py" />
         <option value="$PROJECT_DIR$/voiceRec/settings.py" />
-        <option value="$PROJECT_DIR$/vrApp/serializers.py" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/wavEncode.js" />
-        <option value="$PROJECT_DIR$/vrApp/models.py" />
         <option value="$USER_HOME$/sshTest.py" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/audioRec.js" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/textDisplay.js" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/textBox.js" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/rateStatistics.js" />
+        <option value="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js" />
+        <option value="$PROJECT_DIR$/vrApp/models.py" />
+        <option value="$PROJECT_DIR$/vrApp/serializers.py" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/main.js" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/test.txt" />
+        <option value="$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py" />
+        <option value="$PROJECT_DIR$/vrApp/static/vrApp/findText.js" />
         <option value="$PROJECT_DIR$/vrApp/urls.py" />
         <option value="$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/audioRec.js" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/findText.js" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/textDisplay.js" />
-        <option value="$PROJECT_DIR$/vrApp/templates/vrApp/index.html" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/textBox.js" />
-        <option value="$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/test.txt" />
         <option value="$PROJECT_DIR$/vrApp/views.py" />
-        <option value="$PROJECT_DIR$/vrApp/static/vrApp/main.js" />
       </list>
     </option>
   </component>
@@ -183,10 +142,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="30" />
-    <option name="y" value="77" />
-    <option name="width" value="1336" />
-    <option name="height" value="684" />
+    <option name="x" value="25" />
+    <option name="y" value="180" />
+    <option name="width" value="1356" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -212,7 +171,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,6 +263,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,8 +281,8 @@
       <recent name="$PROJECT_DIR$/static/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/vrApp/static/vrApp/swf" />
       <recent name="$PROJECT_DIR$/vrApp/static/vrApp" />
+      <recent name="$PROJECT_DIR$/vrApp/static/vrApp/swf" />
       <recent name="$PROJECT_DIR$/vrApp/static/img" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/vrApp/templates/vrApp" />
@@ -492,10 +451,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="77" width="1336" height="684" extended-state="0" />
+    <frame x="25" y="180" width="1356" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2532418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24943651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -530,7 +489,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2532418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24757643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -538,6 +497,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -557,17 +519,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/voiceRec/settings.py">
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/findText.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -604,7 +560,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <element signature="e#16#51#0" expanded="true" />
+            <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -656,7 +612,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="45" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="45" />
           <folding>
-            <element signature="e#16#51#0" expanded="true" />
+            <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -724,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/d3.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.04974271">
@@ -773,20 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/wavEncode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34285715">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37049744">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -801,20 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/voiceRec/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/recorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.5265865">
-          <caret line="174" column="4" selection-start-line="174" selection-start-column="4" selection-end-line="174" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -822,46 +743,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14545454">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/audioRec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14545454">
+        <state vertical-scroll-proportion="-2.6">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/urls.py">
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/d3.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14545454">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js">
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/recorder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+        <state vertical-scroll-proportion="-0.8181818">
+          <caret line="174" column="4" selection-start-line="174" selection-start-column="4" selection-end-line="174" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js">
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/wavEncode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+        <state vertical-scroll-proportion="-0.018181818">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js">
+    <entry file="file://$PROJECT_DIR$/filename.log">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -869,54 +782,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/templates/vrApp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#2;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.43345323">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/svgDraw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6912522">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/vrJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41680962">
+          <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/findText.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
+    <entry file="file://$PROJECT_DIR$/vrApp/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="90" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/textBox.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47512865">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12349914">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/voiceRec/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/kaldi/egs/thchs30/online_demo/runVr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -924,17 +869,25 @@
     <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vrApp/static/vrApp/audioToText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vrApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.774892">
-          <caret line="185" column="30" selection-start-line="185" selection-start-column="12" selection-end-line="185" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.44864866">
+          <caret line="222" column="26" selection-start-line="222" selection-start-column="26" selection-end-line="222" selection-end-column="26" />
           <folding>
-            <element signature="e#16#51#0" expanded="true" />
+            <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

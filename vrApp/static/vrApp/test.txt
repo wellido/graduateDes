@@ -9,3 +9,5 @@ vrRecord.objects.get(audioFile="1493278428000")
     var oReq = new XMLHttpRequest();
     oReq.open("POST", "/vrData/");
     oReq.send(postForm);
+
+INSERT INTO vrApp_vrrecord(audioFile, textFile,textRealFile,audioBinary)VALUES (1493278428002,"wqwqr","dqwqe","2131414")

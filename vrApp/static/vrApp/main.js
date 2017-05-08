@@ -25,10 +25,15 @@ function onMediaSuccess(stream) {
               result += String.fromCharCode.apply(null, slice);
               index += CHUNK_SIZE;
             }
+            var realText;
+            if($("#textArea2").val()) {
+                realText=$("#textArea2").val();
+            } else {realText = "noWords";}
             var postData=JSON.stringify({
                     'isKaldi': isKaldi,
                     'audioFile': Date.parse(new Date()),
                     'textFile': "11",
+                    'textRealFile': realText,
                     'audioBinary':result
                 });
                 var postWav = new FormData();
@@ -87,10 +92,12 @@ window.onload = function() {
     mainDiv();
     audioRec();
     audioToText();
+    rateStatistics();
     findText();
     textDisplay();
     svgDraw();
     svgDraw2();
     svgDraw3();
+    svgDraw4();
     textBox();
 }

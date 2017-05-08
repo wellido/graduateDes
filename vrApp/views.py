@@ -1,4 +1,5 @@
 #encoding=utf-8
+from __future__ import division
 from django.shortcuts import render
 from rest_framework import status
 from vrApp.models import vrRecord
@@ -38,20 +39,20 @@ def index(request, format=None):
 def prn_obj(obj):
     print '\n'.join(['%s:%s' % item for item in obj.__dict__.items()])
 
-def insertinaryToDB(conn, cu, audioFile, audioBinary):
-	cu.execute("UPDATE vrApp_vrrecord audioBinary = '"+str(audioBinary)+
+def updateTextToDB(conn, cu, audioFile, textFile):
+	cu.execute("UPDATE vrApp_vrrecord textFile = '"+str(textFile)+
                "' WHERE audioFile = '"+str(audioFile)+"'" )
 	conn.commit()
 
-def insertToDB(conn, cu, audioFile, textFile,audioBinary):
-    cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,audioBinary) "
-               "VALUES (?,?,?)", (audioFile, textFile,audioBinary) )
+def insertToDB(conn, cu, audioFile, textFile, textRealFile,audioBinary):
+    cu.execute("INSERT INTO vrApp_vrrecord(audioFile, textFile,textRealFile,audioBinary) "
+               "VALUES (?,?,?,?)", (audioFile, textFile,textRealFile,audioBinary) )
     conn.commit()
 # 建立ssh连接
 paramiko.util.log_to_file("filename.log")
 def sshConnct(sshClient):
     sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    sshClient.connect("192.168.1.115", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
+    sshClient.connect("202.115.24.74", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
 
 # 删除旧wav
 def rmAudio():
@@ -180,26 +181,69 @@ def vrRequst(request):
         postDict={}
         req = json.loads(request.body)
         postDict['audioFile']=req['audioFile']
-        postDict['textFile']=req['textFile']
+        postDict['textRealFile']=req['textRealFile']
         postDict['audioBinary']=req['audioBinary']
         if req['isKaldi']==0:
             samplingRateChange2()
             kaldiResult = stringSplit(sshKaldi());
+            postDict['textFile']=kaldiResult;
             kaldiPostJson = json.dumps(kaldiResult,ensure_ascii=False)
             print kaldiPostJson
             if postDict:
-                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
+                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['textRealFile'],postDict['audioBinary'])
                 return JsonResponse(kaldiPostJson, safe=False, status=status.HTTP_201_CREATED)
             return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
         else:
             if postDict:
                 samplingRateChange()
-                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['audioBinary'])
                 token = get_token()
                 apiRes = use_cloud(token)
+                postDict['textFile']=apiRes;
+                insertToDB(conn,cu,postDict['audioFile'],postDict['textFile'],postDict['textRealFile'],postDict['audioBinary'])
                 apiPostJson = json.dumps(apiRes,ensure_ascii=False)
                 return JsonResponse(apiPostJson, safe=False, status=status.HTTP_201_CREATED)
             return JsonResponse("not ok", safe=False,status=status.HTTP_400_BAD_REQUEST)
+
+#识别率统计
+@csrf_exempt
+def rateSta(request):
+    if request.method == "POST":
+        cu.execute("SELECT textFile,textRealFile from vrApp_vrrecord")
+        data = cu.fetchall()
+        numerator=0
+        denominator=0
+        index1=0
+        index2=0
+        index3=0
+        for row in data:
+            if row[0] and row[1]!="noWords":
+                res2=row[0]#textFile
+                res1=row[1]#textRealFile
+                print res1
+                print res2
+                len2=len(res2)
+                for m in res1:
+                    if index3==index1:
+                        for n in res2:
+                            if m==n:
+                                if index1==index2:
+                                    numerator+=1
+                                else:
+                                    if index2<len2:
+                                        if res1[index1+1]==res2[index2+1]:
+                                            numerator+=1
+                                            index3=index2
+                            index2+=1
+                        index2=0
+                    index3+=1
+                    index1+=1
+                    denominator+=1
+                index1=0
+                index2=0
+                index3=0
+        rateValue = numerator/denominator
+        ratePostJson = json.dumps(rateValue,ensure_ascii=False)
+        return JsonResponse(ratePostJson, safe=False, status=status.HTTP_201_CREATED)
 
 
 

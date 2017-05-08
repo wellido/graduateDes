@@ -119,7 +119,7 @@ function mainDiv() {
     .style({
     'position':'absolute',
     "left" : "100px",
-    "top" : "150px",
+    "top" : "250px",
     "width" : "200px",
     "height": "50px",
     "border": "solid 1px black",
@@ -131,10 +131,47 @@ function mainDiv() {
      'color':'black',
      'text-align': 'center'
     });
+    //识别率统计
+    d3.select("#funcDiv3")
+    .style({
+    'position':'absolute',
+    "left" : "100px",
+    "top" : "150px",
+    "width" : "200px",
+    "height": "50px",
+    "border": "solid 1px black",
+    'cursor': 'pointer'
+    }).html("识别率统计").style({
+     'vertical-align': 'middle',
+     'font-size': '20px',
+     'line-height': '50px',
+     'color':'black',
+     'text-align': 'center'
+    });
+    //统计实际文字的div
+    d3.select("#realWords").style({
+    'position':'absolute',
+    "left" : "100px",
+    "top" : "480px",
+    "width" : "200px",
+    "height": "100px",
+    'border-radius': '5px',
+    "background-size":"cover",
+    "border": "solid 1px black",
+    "z-index":"-1"
+    }).html("为进行识别率统计的输入框");
+    d3.select("#realWords").append("textarea")
+    .attr("id","textArea2").style({
+    "position":"absolute",
+    "top":"20px",
+    "left":"0px",
+    "width":"200px",
+    "height":"80px"
+    })
     //传文本按钮
     d3.select("#textUpload").style({
     'position':'absolute',
-    "top" : "280px",
+    "top" : "380px",
     "width" : "80px",
     "height": "80px",
     "border": "solid 1px black",
