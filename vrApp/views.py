@@ -52,7 +52,7 @@ def insertToDB(conn, cu, audioFile, textFile, textRealFile,audioBinary):
 paramiko.util.log_to_file("filename.log")
 def sshConnct(sshClient):
     sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    sshClient.connect("202.115.24.74", port=22, username="april", password="xiaojing527",allow_agent=False,look_for_keys=False)
+    sshClient.connect("***", port=, username="april", password="***",allow_agent=False,look_for_keys=False)
 
 # 删除旧wav
 def rmAudio():
